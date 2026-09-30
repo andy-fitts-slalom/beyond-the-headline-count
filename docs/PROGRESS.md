@@ -21,3 +21,11 @@
 - Independent review identified and fixed fragment-root evidence navigation, long chart labels, and a hard-coded unavailable example. Campaign names simplified to Signal, Frame and Folio; purposes retain campaign type.
 - Production build and metric tests pass. Fonts are self-hosted; static reading does not depend on animation or external requests.
 - Created Vercel project beyond-the-headline-count under sole available team andy-protogen. Browser acceptance suite and deployment verification are in progress.
+
+## 2026-09-30 — Verification milestone
+- All 12 browser acceptance cases pass across desktop and 390×844 phone viewports, with reduced motion, zero axe violations and zero console/uncaught browser errors.
+- Reviewed actual screenshots for hero and message sections on both sizes; no clipping. Fixed keyboard accessibility of the horizontally scrollable mobile comparison table.
+- Download error injection and empty evidence search both recover; evidence Escape restores focus. The no-priority fixture renders Unavailable via shared metrics.
+- Vercel GitHub connection succeeded using existing access; API confirms andy-fitts-slalom/beyond-the-headline-count and productionBranch main. No user action is needed for Git connection.
+- Added GitHub Actions verification and font license notices; self-hosted fonts avoid third-party runtime calls.
+- Live deployment checks remain pending at this milestone.
