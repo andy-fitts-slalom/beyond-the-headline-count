@@ -1,5 +1,15 @@
 # Progress and continuation
 
+## Current handoff — complete, 2026-09-30
+- Live: https://beyond-the-headline-count.vercel.app (opened and verified).
+- Public repository: https://github.com/andy-fitts-slalom/beyond-the-headline-count.
+- Vercel: Andy-Protogen / beyond-the-headline-count, linked to the repository with production branch main. No manual connection step remains.
+- Seven unit tests, 12 local browser checks, 12 production browser checks, production build and GitHub Actions passed.
+- No blocked steps. Remaining validation limits are in docs/VERIFICATION.md.
+- Continue here: read BRIEF.md, AGENTS.md, docs/DATA.md and docs/DECISIONS.md. Use npm ci, npm test, npm run build, npm run test:e2e. Production checks use PLAYWRIGHT_BASE_URL.
+- Local preview was served at http://127.0.0.1:4173; restart with npm run preview if needed.
+- The record below is chronological; earlier pending statuses are historical, not current blockers.
+
 ## 2026-09-30 — Planning
 - Workspace initially contained only BRIEF.md; compared byte-for-byte with supplied source (identical), then copied source as requested.
 - No existing repository or ancestor AGENTS.md was found.
@@ -29,3 +39,14 @@
 - Vercel GitHub connection succeeded using existing access; API confirms andy-fitts-slalom/beyond-the-headline-count and productionBranch main. No user action is needed for Git connection.
 - Added GitHub Actions verification and font license notices; self-hosted fonts avoid third-party runtime calls.
 - Live deployment checks remain pending at this milestone.
+
+
+## 2026-09-30 — Publication and durable handoff
+- GitHub user andy-fitts-slalom and Vercel user andyfitts-4966 were verified; sole accessible Vercel team was Andy-Protogen.
+- Both Git-triggered deployment and explicit production CLI deployment reached Ready. Production alias is https://beyond-the-headline-count.vercel.app.
+- Opened actual deployed URL, inspected rendered page and screenshots, and reran all 12 browser cases against production successfully. Verified root and direct chapter reload, mobile flow, downloads and error recovery.
+- GitHub Actions independently passed build, seven unit checks and 12 browser cases on Linux Chromium.
+- Preserved supplied brief unchanged. Public visibility differs from its original private requirement by the user's explicit later authorization.
+- User offered to connect Vercel manually; existing access allowed the connection to be completed instead. No token or reconnection request was needed.
+- README, license, agent instructions, dataset dictionary, dated decisions, verification matrix and actual deployed screenshots are committed for later sessions.
+- All actions are real local controls; no fake notifications or shared backend behavior. No real client data, proprietary code, internal corpus, or other case-study material was accessed.

@@ -5,8 +5,8 @@ An interactive P302 editorial data story for the **entirely fictional Meridian S
 Built independently with **Vue 3, TypeScript, Vite and D3 scales with Vue-rendered SVG**. No database, AI service, notifications, shared backend state, or analytics feed. Fonts and data are served locally with the app. All four chapters work without animation; JavaScript is required to render the Vue application.
 
 - Repository: https://github.com/andy-fitts-slalom/beyond-the-headline-count (public, as subsequently authorized)
-- Production URL: pending final deployment verification; see [progress](docs/PROGRESS.md).
-- Vercel project: `andy-protogen/beyond-the-headline-count`; connected GitHub repository, intended production branch `main`.
+- Production URL: https://beyond-the-headline-count.vercel.app — opened and browser-verified on September 30, 2026.
+- Vercel project: `andy-protogen/beyond-the-headline-count`; connected GitHub repository, verified production branch `main`.
 
 ## Run and verify
 
