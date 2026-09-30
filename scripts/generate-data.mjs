@@ -16,21 +16,21 @@ const outlets = [
 
 const campaigns = [
   {
-    id: 'signal', name: 'Signal / podcast',
+    id: 'signal', name: 'Signal',
     purpose: 'Launch Signal, a podcast about the people shaping neighborhood sound.',
     audience: 'Curious listeners seeking locally rooted audio storytelling',
     primaryMessage: 'Signal pairs local voices with practical listening guides to help listeners explore their own neighborhoods.',
     priorityOutletIds: ['aurora', 'interval', 'northline'],
   },
   {
-    id: 'frame', name: 'Frame / streaming showcase',
+    id: 'frame', name: 'Frame',
     purpose: 'Introduce Frame, a streaming showcase of independent regional films.',
     audience: 'Film enthusiasts who want context from independent creators',
     primaryMessage: 'Frame pairs independent regional films with filmmaker conversations that reveal how each story was made.',
     priorityOutletIds: ['screenfold', 'interval', 'northline'],
   },
   {
-    id: 'folio', name: 'Folio / digital magazine',
+    id: 'folio', name: 'Folio',
     purpose: 'Launch Folio, a digital magazine series examining everyday civic spaces.',
     audience: 'Thoughtful readers looking for accessible local civic reporting',
     primaryMessage: 'Folio combines reported stories about civic spaces with open reading guides for community discussion.',

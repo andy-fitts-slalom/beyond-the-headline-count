@@ -14,3 +14,10 @@
 - Seven initial metric tests pass: regeneration, referential integrity, dates, originals, deduplication, rankings, denominator independence and unavailable vs zero.
 - Vercel CLI authenticated as andyfitts-4966; one accessible team: Andy-Protogen (andy-protogen), Hobby.
 - User offered to connect Vercel to GitHub. Continue local implementation and deployment preparation; intended production branch is main.
+
+## 2026-09-30 — Story structure and core interactions
+- Four editorial chapters implemented with record-derived SVG bars, rate cards and comparison table.
+- Implemented volume toggle, persistent highlighting across comparisons, reset, article evidence dialog, evidence search, JSON download and unavailable-data fixture.
+- Independent review identified and fixed fragment-root evidence navigation, long chart labels, and a hard-coded unavailable example. Campaign names simplified to Signal, Frame and Folio; purposes retain campaign type.
+- Production build and metric tests pass. Fonts are self-hosted; static reading does not depend on animation or external requests.
+- Created Vercel project beyond-the-headline-count under sole available team andy-protogen. Browser acceptance suite and deployment verification are in progress.
