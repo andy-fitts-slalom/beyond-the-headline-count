@@ -1,5 +1,7 @@
 # Beyond the Headline Count
 
+**Current branch: Meridian UI 1.0.0 migration, not deployed.** Review `refactor/meridian-ui-1.0.0`. The live URL below serves the earlier release. Local preview: http://127.0.0.1:4387. See [migration evidence](docs/screenshots/meridian-1.0.0/README.md) and [verification](docs/VERIFICATION.md).
+
 An interactive P302 editorial data story for the **entirely fictional Meridian Signal Group**. All campaigns, outlets, articles, excerpts and annotations are invented. The story moves from an apparent volume winner to distinct stories and message inclusion in campaign-specific priority outlets.
 
 Built independently with **Vue 3, TypeScript, Vite and D3 scales with Vue-rendered SVG**. No database, AI service, notifications, shared backend state, or analytics feed. Fonts and data are served locally with the app. All four chapters work without animation; JavaScript is required to render the Vue application.
@@ -18,7 +20,7 @@ npm run dev
 npm run generate:data
 npm test
 npm run build
-npm run preview
+npm run preview -- --host 127.0.0.1 --port 4387 --strictPort
 npm run test:e2e
 ```
 
@@ -76,3 +78,9 @@ npx vercel --prod --scope andy-protogen
 ```
 
 Never commit `.vercel`, `.env*`, credentials or build output. Open and test the production URL after changes before calling the deployment verified.
+
+## Shared design system
+
+`@meridian/ui` 1.0.0 is installed from `vendor/meridian-ui-1.0.0.tgz`; keep the tarball and lockfile together. `npm ci` works without the sibling design-system source. Theme is paper, mode is editorial; package fonts/styles precede the app composition stylesheet. `src/presentation/campaignStyle.ts` maps campaign IDs to the shared chart palette, without changing domain metrics.
+
+For this migration, GitHub milestone pushes are authorized on `refactor/meridian-ui-1.0.0` only. Its Vercel auto-deployments are disabled in `vercel.json`. A separate user request is needed to merge to main or publish.

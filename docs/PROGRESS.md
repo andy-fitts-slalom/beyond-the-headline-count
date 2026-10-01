@@ -1,6 +1,16 @@
 # Progress and continuation
 
-## Current handoff — complete, 2026-09-30
+## Current handoff — Meridian UI 1.0.0 migration complete, not deployed
+- Current checkout: p-case-studies/p302-data-story. Review branch: refactor/meridian-ui-1.0.0. User authorized discrete GitHub milestone pushes; main remains untouched.
+- Shared release is committed in vendor/ with npm lockfile integrity. Clean independent install/build passed.
+- Local preview: http://127.0.0.1:4387. Restart with npm run preview -- --host 127.0.0.1 --port 4387 --strictPort.
+- Required checks: 7 unit tests, production compilation and 19 browser tests pass. Original 12 journey checks remain unchanged. New checks cover four widths, SVG label sizes/color consistency, modal and recovery states, keyboard, 200% zoom-equivalent layout and print.
+- Dataset SHA-256 unchanged: a4e7b743f77d0a52582ca64e7ca1a856b9e4dd824ea4d826521b5c0e1b6cf374. Domain metrics/generator untouched.
+- Representative screenshots and state/viewport index: docs/screenshots/meridian-1.0.0/README.md. Detailed verification and limitations: docs/VERIFICATION.md.
+- No unresolved implementation blocker. No refactor deployment: vercel.json disables this branch; a separate publication request is required before merging/pushing main or deploying. Previous live-site verification below does not verify this migration.
+
+
+## Prior production handoff — 2026-09-30 (predates Meridian migration)
 - Live: https://beyond-the-headline-count.vercel.app (opened and verified).
 - Public repository: https://github.com/andy-fitts-slalom/beyond-the-headline-count.
 - Vercel: Andy-Protogen / beyond-the-headline-count, linked to the repository with production branch main. No manual connection step remains.
@@ -75,3 +85,9 @@
 - 200% equivalent reading verified at 720×500 CSS pixels with DPR 2 (equivalent to a 1440×1000 display zoomed 200%). A CSS zoom trial was rejected as nonrepresentative because it distorts top-layer viewport units; no app-specific CSS-zoom workaround was introduced.
 - Isolated git-archive copy in /tmp: npm ci and production build passed without any sibling folder. Dataset checksum remains exact.
 - Added this refactor branch to GitHub Actions verification only. Vercel branch deployments remain disabled; read-only deployment listing shows only prior main releases.
+
+## 2026-09-30 — Migration handoff complete
+- GitHub Actions 36796055930 passed for verification milestone c07f3db on the refactor branch. The final documentation/screenshot milestone does not alter runtime behavior.
+- Saved inspected local screenshots with explicit viewport/state metadata, updated README/agent scope, decisions, package/font provenance and verification limits.
+- Milestones pushed: d870abb package/baseline and deployment guard; 697227b shared presentation; c07f3db responsive checks and autofocus fix; final documentation commit follows.
+- No publication performed. Production remains the pre-migration main release. Local preview is the review surface; future publication requires separate authorization.
