@@ -1,7 +1,7 @@
 name: Verify story
 on:
   push:
-    branches: [main]
+    branches: [main, refactor/meridian-ui-1.0.0]
   pull_request:
 permissions:
   contents: read

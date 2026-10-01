@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { computed, ref, nextTick } from "vue";
 import {
   MeridianBrand,
   MeridianBadge,
@@ -81,9 +81,11 @@ const period = `${dateLabel(dates[0]!)} – ${dateLabel(dates.at(-1)!)}`;
 function outlet(id: string) {
   return dataset.outlets.find((o) => o.id === id);
 }
-function openArticle(id: string, event: Event) {
+async function openArticle(id: string, event: Event) {
   openArticleId.value = id;
   returnFocus.value = event.currentTarget as HTMLElement;
+  // Let the conditional evidence content mount before native autofocus runs.
+  await nextTick();
   evidence.value?.showModal();
 }
 function closeEvidence() {

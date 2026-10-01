@@ -66,3 +66,12 @@
 - One local campaign mapping supplies chart SVG and card/control appearance. Responsive SVG user units match rendered pixels for minimum 12px axes and 14px labels/values.
 - Kept native dialog and domain functions; all 12 original browser checks and production build pass on local port 4387. Dataset and metric module are unchanged.
 - Additional width, zoom, keyboard, state screenshot and package-portability checks are next.
+
+## 2026-09-30 — Responsive/accessibility verification milestone (not deployed)
+- Required npm test (7), npm run build and npm run test:e2e (19) pass. Original 12 browser checks are unchanged; added seven presentation regressions.
+- No page overflow at 320, 390, 768, 1440px; effective SVG label/axis sizes checked, stable campaign colors agree across figures and strips; all comparisons remain visible.
+- New keyboard test exposed existing showModal-before-render timing; awaited Vue nextTick before native showModal so autofocus reaches Close. Native dialog keeps page background inert; Escape restores opener focus. Browser chrome remains reachable per native behavior.
+- Verified empty search recovery, unavailable/no-denominator, actual JSON download, injected browser download restriction, modal and print states; axe reports no violations for tested states.
+- 200% equivalent reading verified at 720×500 CSS pixels with DPR 2 (equivalent to a 1440×1000 display zoomed 200%). A CSS zoom trial was rejected as nonrepresentative because it distorts top-layer viewport units; no app-specific CSS-zoom workaround was introduced.
+- Isolated git-archive copy in /tmp: npm ci and production build passed without any sibling folder. Dataset checksum remains exact.
+- Added this refactor branch to GitHub Actions verification only. Vercel branch deployments remain disabled; read-only deployment listing shows only prior main releases.
