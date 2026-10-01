@@ -50,3 +50,12 @@
 - User offered to connect Vercel manually; existing access allowed the connection to be completed instead. No token or reconnection request was needed.
 - README, license, agent instructions, dataset dictionary, dated decisions, verification matrix and actual deployed screenshots are committed for later sessions.
 - All actions are real local controls; no fake notifications or shared backend behavior. No real client data, proprietary code, internal corpus, or other case-study material was accessed.
+
+## 2026-09-30 — Meridian UI migration started (not deployed)
+- Found relocated checkout at p-case-studies/p302-data-story. Started from clean main at 2225488; no unrelated modifications.
+- Read project brief, instructions and continuation/verification notes, all five shared design-system documents, and actual package CSS/Vue/chart exports.
+- Baseline: 7 unit tests, production build and 12 browser tests passed. Initial sandbox regeneration was denied by the stale workspace root; rerunning with authorized filesystem access passed. Port 4173 had stale preview listeners; baseline browser verification uses this checkout's dedicated port 4387.
+- Baseline screenshots: docs/screenshots/meridian-baseline (1440px hero and 390px message).
+- Dataset SHA-256: a4e7b743f77d0a52582ca64e7ca1a856b9e4dd824ea4d826521b5c0e1b6cf374.
+- User authorized milestone GitHub pushes after the pasted local-only instructions. Work is on refactor/meridian-ui-1.0.0, never main. vercel.json disables deployments for this branch before the first push, using Vercel's documented git.deploymentEnabled map.
+- Vendored the supplied 1.0.0 tarball and installed via file:vendor/meridian-ui-1.0.0.tgz. No sibling runtime dependency, registry package or symlink.
