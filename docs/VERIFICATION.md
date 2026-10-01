@@ -1,5 +1,13 @@
 # Verification — 2026-09-30
 
+## Vesper UI 3.0.0 — 2026-10-01
+
+- `vendor/vesper-ui-3.0.0.tgz` installed with a repository-relative lockfile. Barlow Condensed 600/700 and a 35.9 kB salt-flat WebP are built into the production bundle.
+- `npm test`: 7/7; `npm run build`: passed; `npm run test:e2e`: 20/20 after updating the expected display font. Initial browser startup required local-server access.
+- Chrome local preview at 1512px inspected. A same-viewport side-by-side comparison with the selected design guided headline size, hero spacing and texture contrast. Existing browser coverage verifies the narrow/desktop layouts, chapter routes, keyboard focus, dialog, print, download and data interactions.
+- Dataset and domain functions remain unchanged. This local result does not claim a live production deployment. Historical 2.0.0 verification follows.
+
+
 ## Documentation sweep — 2026-09-30
 
 Refreshed README onboarding, workflows, setup, project structure and dated verification context. Corrected current branding guidance and explicitly marked superseded planning/migration records as historical. Vesper UI 2.0.0 remains the vendored dependency; runtime source and package manifests contain no Meridian references. Historical screenshots, branch deployment exclusions and compatibility storage keys are preserved.

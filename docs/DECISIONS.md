@@ -1,5 +1,12 @@
 # Dated decisions
 
+## 2026-10-01 — Salt-flat direction
+
+- The selected image is the reference for Frame's paper/editorial composition. Use a low-contrast salt-flat asset behind reading content, cool gray semantic surfaces, Barlow Condensed display text and petrol emphasis.
+- Keep the image quiet under text and plain panels around charts and controls. Preserve print's ink-saving white background and all article-derived metrics.
+- Watchlight and Verbatim share the visual foundation through `@vesper/ui` 3.0.0 but keep their own layouts and domain rules.
+
+
 ## 2026-09-30
 - Treat supplied BRIEF.md as acceptance contract; no external business data or case-study assets.
 - Use a fixed six-week fictional reporting window and deterministic generator, with explicit story originals and campaign-specific priority outlets.

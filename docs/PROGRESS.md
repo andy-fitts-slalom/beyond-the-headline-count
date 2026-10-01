@@ -1,5 +1,13 @@
 # Progress and continuation
 
+## Vesper UI 3.0 selected direction — 2026-10-01
+
+- Adopted the chosen Frame image direction: pale salt-flat texture, cool gray paper tokens, bold Barlow Condensed display headings, petrol second line, and a quieter sticky chapter bar. The generated texture is bundled in the independent Vesper 3.0.0 tarball.
+- Kept the fictional dataset, metric functions, chapter structure, interactions and routes unchanged. Updated one browser assertion from the superseded Caslon font to Barlow Condensed.
+- Local verification: 7/7 unit tests, production build and 20/20 browser tests passed. Browser checks cover 320/390/768/1440px, keyboard/dialog states, print and 200% zoom-equivalent layout. The initial browser-server bind failed under sandbox permissions; the rerun passed with local-server access.
+- Compared the selected 1487 × 1058 reference and rendered local Frame page side by side at the same CSS viewport; see `design-qa.md`. Production status is recorded after push. Earlier 2.0.0 results below are historical.
+
+
 ## Documentation sweep — 2026-09-30
 
 Refreshed README onboarding, workflows, setup, project structure and dated verification context. Corrected current branding guidance and explicitly marked superseded planning/migration records as historical. Vesper UI 2.0.0 remains the vendored dependency; runtime source and package manifests contain no Meridian references. Historical screenshots, branch deployment exclusions and compatibility storage keys are preserved.

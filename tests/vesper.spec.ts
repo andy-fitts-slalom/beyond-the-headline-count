@@ -233,7 +233,7 @@ test('Frame identity, packaged typography and all chapter refreshes', async ({ p
   await expect(page.locator('.masthead .vs-brand')).toHaveAccessibleName('Vesper Media Group, top');
   await expect(page.locator('.hero .eyebrow')).toContainText('FRAME');
   expect(await page.locator('body').evaluate(el => getComputedStyle(el).fontFamily)).toContain('DM Sans');
-  expect(await page.locator('h1').evaluate(el => getComputedStyle(el).fontFamily)).toContain('Libre Caslon Display');
+  expect(await page.locator('h1').evaluate(el => getComputedStyle(el).fontFamily)).toContain('Barlow Condensed');
   const mark = await page.locator('.masthead img').getAttribute('src');
   expect(mark).toBeTruthy();
   const favicon = await page.request.get('/favicon.svg');

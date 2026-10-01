@@ -5,9 +5,13 @@ html {
   scroll-padding-top: 104px;
   background: var(--vs-bg);
 }
-body {
+body.vs-root {
   margin: 0;
-  background: var(--vs-bg);
+  background-color: var(--vs-bg);
+  background-image: linear-gradient(rgb(233 236 233 / 45%), rgb(233 236 233 / 45%)), url('@vesper/ui/textures/salt-flats-background.webp');
+  background-position: center top;
+  background-size: cover;
+  background-attachment: fixed, fixed;
   color: var(--vs-text);
   font-family: var(--vs-font-ui);
 }
@@ -36,12 +40,12 @@ p {
 h1,
 h2 {
   font-family: var(--vs-font-display);
-  font-weight: 400;
-  letter-spacing: -0.025em;
-  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 0.98;
 }
 h2 {
-  font-size: clamp(2.75rem, 4.6vw, 3.75rem);
+  font-size: clamp(3.25rem, 5.2vw, 4.5rem);
   margin-bottom: var(--vs-space-6);
 }
 p {
@@ -68,7 +72,7 @@ footer {
   color: var(--vs-text-muted);
 }
 .hero {
-  padding: var(--vs-space-16) var(--vs-gutter) 0;
+  padding: calc(var(--vs-space-16) + var(--vs-space-2)) var(--vs-gutter) 0;
 }
 .eyebrow,
 .chapter-number,
@@ -90,20 +94,22 @@ footer {
   flex: none;
 }
 .hero h1 {
-  margin: var(--vs-space-8) 0;
+  margin: var(--vs-space-10) 0;
   max-width: 1000px;
+  font-size: clamp(5rem, 8vw, 8.5rem);
+  line-height: 0.92;
 }
 h1 em,
 h2 em {
   color: var(--vs-action);
-  font-weight: 400;
+  font-weight: inherit;
 }
 .hero-bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--vs-space-6);
-  padding-bottom: var(--vs-space-10);
+  padding-bottom: var(--vs-space-12);
 }
 .dek {
   font-size: var(--vs-text-lg);
@@ -127,7 +133,8 @@ h2 em {
   position: sticky;
   top: 0;
   z-index: var(--vs-z-sticky);
-  background: var(--vs-bg);
+  background: color-mix(in srgb, var(--vs-bg) 80%, transparent);
+  backdrop-filter: blur(12px);
   padding: var(--vs-space-2) var(--vs-gutter);
   justify-content: space-between;
   gap: var(--vs-space-2);
@@ -690,6 +697,9 @@ footer > span {
   }
   .hero {
     padding-top: var(--vs-space-12);
+  }
+  .hero h1 {
+    font-size: clamp(3.5rem, 13vw, 5rem);
   }
   .hero-bottom {
     flex-direction: column;

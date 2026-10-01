@@ -95,7 +95,7 @@ Never commit `.vercel`, `.env*`, credentials or build output. Open and test the 
 
 ## Shared design system
 
-`@vesper/ui` 2.0.0 is installed from `vendor/vesper-ui-2.0.0.tgz`; keep the tarball and lockfile together. `npm ci` works without the sibling design-system source. Theme is paper, mode is editorial; package fonts/styles precede the app composition stylesheet. `src/presentation/campaignStyle.ts` maps campaign IDs to the shared chart palette, without changing domain metrics.
+`@vesper/ui` 3.0.0 is installed from `vendor/vesper-ui-3.0.0.tgz`; keep the tarball and lockfile together. `npm ci` works without the sibling design-system source. Theme is paper, mode is editorial; package fonts/styles precede the app composition stylesheet. `src/presentation/campaignStyle.ts` maps campaign IDs to the shared chart palette, without changing domain metrics.
 
 The product is Frame; its existing production URL retains the earlier project name. Historical migration records and screenshots describe previous releases. Current presentation uses Vesper UI only. Contributor publication constraints and the historical branch deployment guard are documented in [AGENTS.md](AGENTS.md).
 

@@ -10,7 +10,7 @@ Update docs/PROGRESS.md and dated decisions after milestones. Make descriptive c
 
 
 ## Vesper UI migration scope (2026-09-30)
-Use the vendored @vesper/ui 2.0.0 package for shared parent presentation only. Shared branding permits design-system assets/components, never sibling application code, domain computation or records. Keep independent installation from vendor/ and the local mapping signal→0, frame→1, folio→2 in src/presentation/campaignStyle.ts.
+Use the vendored @vesper/ui 3.0.0 package for shared parent presentation only. Shared branding permits design-system assets/components, never sibling application code, domain computation or records. Keep independent installation from vendor/ and the local mapping signal→0, frame→1, folio→2 in src/presentation/campaignStyle.ts.
 
 The user authorized this rebrand, descriptive commits and pushes on main only, followed by production verification. Never rewrite history or discard earlier screenshots. Preserve the historical branch-specific git.deploymentEnabled=false guard. Browser checks use dedicated local port 4387. Use only github.com/andy-fitts-slalom/frame and Vercel andy-protogen/frame. The existing production URL is https://beyond-the-headline-count.vercel.app; do not change domains or routing without explicit approval.
 
