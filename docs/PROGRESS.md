@@ -1,5 +1,10 @@
 # Progress and continuation
 
+## Production confirmation — 2026-10-01
+
+Commit `4ae4a02` was pushed to `main`. [GitHub verification](https://github.com/andy-fitts-slalom/frame/actions/runs/36832939589) passed, and Vercel reported the deployment complete. Opened [production Frame](https://beyond-the-headline-count.vercel.app/) in Chrome and confirmed the enlarged condensed headline, petrol emphasis, pale salt-flat background and four-chapter navigation. Existing domain and routes remain unchanged.
+
+
 ## Vesper UI 3.0 selected direction — 2026-10-01
 
 - Adopted the chosen Frame image direction: pale salt-flat texture, cool gray paper tokens, bold Barlow Condensed display headings, petrol second line, and a quieter sticky chapter bar. The generated texture is bundled in the independent Vesper 3.0.0 tarball.

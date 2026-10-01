@@ -1,5 +1,10 @@
 # Verification — 2026-09-30
 
+## Live result — 2026-10-01
+
+Pushed `4ae4a02` to `main`. [GitHub Actions run 36832939589](https://github.com/andy-fitts-slalom/frame/actions/runs/36832939589) succeeded; Vercel's commit status reported deployment complete. Opened [production Frame](https://beyond-the-headline-count.vercel.app/) in Chrome and visually confirmed the new typography, cool palette and salt-flat texture. The live page retains the four chapters and fictional data labeling.
+
+
 ## Vesper UI 3.0.0 — 2026-10-01
 
 - `vendor/vesper-ui-3.0.0.tgz` installed with a repository-relative lockfile. Barlow Condensed 600/700 and a 35.9 kB salt-flat WebP are built into the production bundle.
