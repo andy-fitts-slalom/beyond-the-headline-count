@@ -4,6 +4,10 @@ An interactive editorial data story for communications leaders comparing campaig
 
 Built independently with **Vue 3, TypeScript, Vite and D3 scales with Vue-rendered SVG**. No database, AI service, notifications, shared backend state, or analytics feed. Fonts and data are served locally with the app. All four chapters work without animation; JavaScript is required to render the Vue application.
 
+![Frame editorial story with Vesper UI 3.0](docs/screenshots/vesper-3.0.0/readme-hero.png)
+
+Screenshot of the Vesper UI 3.0 local production build at 1440px.
+
 - Repository: [frame](https://github.com/andy-fitts-slalom/frame) (public)
 - Production URL: [Open Frame](https://beyond-the-headline-count.vercel.app) — opened and browser-verified on September 30, 2026.
 - Vercel project: `andy-protogen/frame`; connected GitHub repository, verified production branch `main`.

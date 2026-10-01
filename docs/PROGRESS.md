@@ -1,5 +1,9 @@
 # Progress and continuation
 
+## README visual refresh — 2026-10-01
+
+The README now embeds `docs/screenshots/vesper-3.0.0/readme-hero.png`, captured from the local Vesper UI 3.0 production build at 1440 × 1150 after fonts loaded. The editorial hero and opening chapter were inspected without browser page errors. No data or runtime source changed; 7 unit tests, production build and 20 browser tests passed.
+
 ## Production confirmation — 2026-10-01
 
 Commit `4ae4a02` was pushed to `main`. [GitHub verification](https://github.com/andy-fitts-slalom/frame/actions/runs/36832939589) passed, and Vercel reported the deployment complete. Opened [production Frame](https://beyond-the-headline-count.vercel.app/) in Chrome and confirmed the enlarged condensed headline, petrol emphasis, pale salt-flat background and four-chapter navigation. Existing domain and routes remain unchanged.
