@@ -1,5 +1,7 @@
 # Beyond the Headline Count — Project Brief
 
+> Historical planning brief. The naming and design addendum at the end supersedes the original product, organization and delivery names. Start with [README.md](README.md) for the current application and setup.
+
 ## What is this?
 
 An interactive editorial data story for communications leadership at Meridian Signal Group, a fictional media company with streaming, publishing, podcast, and live-event businesses. Regional press teams report campaign results to a central communications team.
@@ -72,7 +74,6 @@ Use a dedicated private GitHub repository named `beyond-the-headline-count` unde
 Keep `BRIEF.md`, `README.md`, and `LICENSE` in the root. Use an MIT license for original prototype code and preserve dependency notices. The README covers the fictional premise, setup, commands, dataset generation, metric definitions, methodology limits, and live URL. Keep agent instructions and dated design decisions/progress in an organized `docs/` structure and an appropriate root `AGENTS.md`.
 
 Make and push descriptive commits as the planning, dataset, story structure, interactions, and verification are completed. Do not invent history or claim real user-research results. Verify the final deployed reading experience and document any remaining limitations.
-
 
 ## 2026-09-30 — Frame naming, design and publication addendum
 

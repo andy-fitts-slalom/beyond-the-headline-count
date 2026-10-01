@@ -1,5 +1,11 @@
 # Verification — 2026-09-30
 
+## Documentation sweep — 2026-09-30
+
+Refreshed README onboarding, workflows, setup, project structure and dated verification context. Corrected current branding guidance and explicitly marked superseded planning/migration records as historical. Vesper UI 2.0.0 remains the vendored dependency; runtime source and package manifests contain no Meridian references. Historical screenshots, branch deployment exclusions and compatibility storage keys are preserved.
+
+Validation: 7 unit tests, production build and 20 local browser tests passed; README local links resolve. Browser preview startup initially hit sandbox EPERM, then passed with approved local-server access. No application behavior or dataset changed. Existing production evidence remains dated; this documentation sweep does not claim a new live-site verification.
+
 ## Frame / Vesper UI 2.0.0 — local release verification
 
 - Required checks: `npm test` 7/7, `npm run build` successful, `npm run test:e2e` 20/20. Baseline was 7/build/19. Existing assertions are retained with namespace and download-name updates; added identity/fonts/mark, all four chapter refreshes and syndicated evidence focus return.
@@ -12,20 +18,22 @@
 - Limits: Chrome only; no physical-phone, screen-reader, native menu zoom, physical print or participant comprehension certification. Zoom is explicit CSS-viewport/DPR equivalence. Static reading does not need animation; rendering needs JavaScript.
 
 ### Learner readiness audit
-| Requirement | Evidence / disposition |
-| --- | --- |
-| Live accessible site | Opened existing domain on Frame project; upgraded production revision and 20 browser checks verified below |
-| Core flows match planning | Four chapters and all original behavior retained; automated journeys and screenshot review |
-| Logical AI scaffolding/context | Root AGENTS, dated brief addendum, DATA, DECISIONS, PROGRESS and VERIFICATION |
-| Root README and LICENSE | Current setup/limits/delivery links; original MIT license retained; font/package notices current |
-| Meaningful main history | Prior commits preserved; descriptive rebrand and verification increments on main |
-| Media audience design | Vesper paper/editorial tokens, VesperBrand mark, DM Sans UI/Caslon display, restrained ruled figures and direct names/values |
-| Responsive and edge cases | Width matrix, focus, reduced motion, print, empty/error/unavailable, complete download checks |
-| Brief shows planning and matches build | Original planning retained verbatim with dated overriding naming/design/delivery addendum |
-| Honest scope | Fictional dataset and labels, no causal/unique-reach/research claim; no client content |
-| Routing / protection | Existing production URL retained; password protection optional and not introduced; prior routing approval block remains |
+
+| Requirement                            | Evidence / disposition                                                                                                       |
+| -------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Live accessible site                   | Opened existing domain on Frame project; upgraded production revision and 20 browser checks verified below                   |
+| Core flows match planning              | Four chapters and all original behavior retained; automated journeys and screenshot review                                   |
+| Logical AI scaffolding/context         | Root AGENTS, dated brief addendum, DATA, DECISIONS, PROGRESS and VERIFICATION                                                |
+| Root README and LICENSE                | Current setup/limits/delivery links; original MIT license retained; font/package notices current                             |
+| Meaningful main history                | Prior commits preserved; descriptive rebrand and verification increments on main                                             |
+| Media audience design                  | Vesper paper/editorial tokens, VesperBrand mark, DM Sans UI/Caslon display, restrained ruled figures and direct names/values |
+| Responsive and edge cases              | Width matrix, focus, reduced motion, print, empty/error/unavailable, complete download checks                                |
+| Brief shows planning and matches build | Original planning retained verbatim with dated overriding naming/design/delivery addendum                                    |
+| Honest scope                           | Fictional dataset and labels, no causal/unique-reach/research claim; no client content                                       |
+| Routing / protection                   | Existing production URL retained; password protection optional and not introduced; prior routing approval block remains      |
 
 ### Production release — 2026-09-30
+
 - Repository: https://github.com/andy-fitts-slalom/frame (public), main only. Commits c7a129f (Vesper migration) and b6e480b (browser/visual evidence) pushed successfully.
 - Vercel project Frame (`prj_S5UYgdsrYCKHNIsaoe1icCvkwWZS`, andy-protogen) automatically deployed `b6e480bf05c710dede3af417d321871ea84eaf71`, ref main, repository frame, to production Ready: `dpl_EmLpomr7bhtY13sjTvMwobc69LJy`, https://frame-dh3dlwfsp-andy-protogen.vercel.app.
 - Actual reviewer URL: **https://beyond-the-headline-count.vercel.app**. Vercel inspect confirms this existing alias serves that deployment. Opened in Chrome, title Frame — Vesper Media Group, desktop and phone screenshots inspected. No login/password required.
@@ -37,9 +45,12 @@
 
 ---
 
-## Meridian UI migration — local, not deployed
+## Meridian UI migration — local, not deployed (historical)
+
+This section records a superseded release. Package paths, test filenames, branch instructions and deployment status below apply to that revision only; current Vesper evidence appears above.
 
 ### Automated checks
+
 - Baseline clean main: 7 unit tests, build, 12 original browser checks passed. Stale listeners caused the initial default-port webServer timeout; dedicated port 4387 resolved it. Initial sandbox write denial was environmental, not a data-test defect.
 - Final local npm test: 7 passed. npm run build: TypeScript and Vite passed. npm run test:e2e: 19 passed. No original assertion was removed or weakened; tests/story.spec.ts is unchanged.
 - Width matrix 320/390/768/1440 at 1000px high, plus original 390×844 touch/mobile journey. No page overflow in default, selected, empty, unavailable or injected-error states. The comparison table intentionally scrolls within its named keyboard-focusable region.
@@ -53,9 +64,11 @@
 - Dataset, metrics, generator and original journey tests have no diff from the baseline. Dataset SHA-256: a4e7b743f77d0a52582ca64e7ca1a856b9e4dd824ea4d826521b5c0e1b6cf374. Tarball SHA-256: 867f3f8b38d3e45160964cd26fc1f527999c3876ad6c5253c4dcc9ac9cfd8123.
 
 ### Rendered observations
+
 Inspected actual local Chrome screenshots: shared parent masthead, all chapter compositions, phone volume labels, selected comparison, dialog, empty search, neutral unavailable notice and danger download error. Enlarged dialog/chart and print takeaway are legible without cropped controls. Screenshots with exact viewport/state records are in [meridian-1.0.0](screenshots/meridian-1.0.0/README.md). Local preview opened in Chrome.
 
 ### Remaining limits
+
 No physical phones, Safari/Firefox, full screen-reader audit, native browser-menu zoom certification, physical printing or new user-comprehension study. The 200% test is explicit viewport/DPR emulation. No production or preview deployment was performed for this refactor. Existing production verification below is historical.
 
 ---
@@ -63,12 +76,14 @@ No physical phones, Safari/Firefox, full screen-reader audit, native browser-men
 ## Prior release verification (before Meridian UI migration)
 
 ## Data and implementation
+
 - Seven unit tests passed: deterministic regeneration; foreign keys, unique IDs, story originals and dates; independent record counts; narrative rankings; unchanged message denominators; unavailable versus observed zero; campaign-specific priority status.
 - Independent data reviewer checked the narrative, original/copy chronology and annotation consistency. Fixed UI integration issues before publication.
 - TypeScript check and Vite production compilation passed.
 - No runtime external requests, backend, notification, analytics, or AI service. All records and annotations are invented.
 
 ## Browser and deployment
+
 All 12 local browser checks passed on desktop (1440×1000) and phone (390×844), both with reduced motion. Checked toggle and denominator consistency, campaign highlight/reset, evidence navigation and Escape/focus restoration, empty search recovery, unavailable fixture, exact JSON download, injected download failure and reset, direct chapter loads/refreshes, no horizontal page overflow, zero console errors, and zero axe violations. Desktop/mobile hero and message screenshots were inspected.
 
 Vercel Git link and main production branch confirmed through project API. Production URL https://beyond-the-headline-count.vercel.app was opened in Chrome and checked with the same complete 12-test suite: all passed. No authentication was needed in fresh test browser contexts. Vercel reported READY, and the deployed source revision was `317bb098490da2c2068251a8cb822b4b89e5473e`. The final documentation commit does not change application code.
@@ -78,27 +93,28 @@ GitHub Actions run [36780371067](https://github.com/andy-fitts-slalom/beyond-the
 Actual deployed screenshots are retained in [screenshots/](screenshots/): desktop/mobile opening and message-comparison sections.
 
 ## Boundaries
-Automated accessibility checks and keyboard/viewport testing are not a full assistive-technology audit. No real user research was performed. JavaScript is required; animation is not. No claims of real audience reach or business causality.
 
+Automated accessibility checks and keyboard/viewport testing are not a full assistive-technology audit. No real user research was performed. JavaScript is required; animation is not. No claims of real audience reach or business causality.
 
 ## Acceptance mapping
 
-| Brief requirement | Verified evidence |
-| --- | --- |
-| Apparent volume winner, repeated-story reveal, priority message comparison, takeaway | Four static editorial chapters; direct labels and final comparison table |
-| Deterministic fictional records, explicit originals and priority status | Generator, JSON, data dictionary, seven unit tests and independent review |
-| Every numerical claim from records | Shared summaries, independent browser expectations, dynamic counts/rates/dates and unavailable fixture |
-| Published/distinct toggle never changes message denominator | Unit and browser invariance assertions |
-| Campaign highlight preserves all comparisons and resets | Browser journey on both sizes |
-| Inspect article campaign, outlet priority, label and group | Evidence dialog browser checks, prepared rationale shown |
-| Methodology and downloadable data | Expandable methods; exact downloaded JSON matches source |
-| Empty/error/unavailable states | No-match recovery, injected download failure/reset, isolated null-rate fixture |
-| Keyboard and accessibility basics | Native buttons/select/dialog, visible focus, Escape/focus return, accessible chart descriptions, table keyboard scrolling, axe checks |
-| Reduced motion and phone layout | All browser checks use reduced motion; screenshots and overflow assertions at 390px |
-| Production and direct loads/refresh | Live root plus /#message load/reload checked in real browsers |
-| GitHub/Vercel independent publication | Dedicated repository/project; verified Git link and main production branch |
+| Brief requirement                                                                    | Verified evidence                                                                                                                     |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
+| Apparent volume winner, repeated-story reveal, priority message comparison, takeaway | Four static editorial chapters; direct labels and final comparison table                                                              |
+| Deterministic fictional records, explicit originals and priority status              | Generator, JSON, data dictionary, seven unit tests and independent review                                                             |
+| Every numerical claim from records                                                   | Shared summaries, independent browser expectations, dynamic counts/rates/dates and unavailable fixture                                |
+| Published/distinct toggle never changes message denominator                          | Unit and browser invariance assertions                                                                                                |
+| Campaign highlight preserves all comparisons and resets                              | Browser journey on both sizes                                                                                                         |
+| Inspect article campaign, outlet priority, label and group                           | Evidence dialog browser checks, prepared rationale shown                                                                              |
+| Methodology and downloadable data                                                    | Expandable methods; exact downloaded JSON matches source                                                                              |
+| Empty/error/unavailable states                                                       | No-match recovery, injected download failure/reset, isolated null-rate fixture                                                        |
+| Keyboard and accessibility basics                                                    | Native buttons/select/dialog, visible focus, Escape/focus return, accessible chart descriptions, table keyboard scrolling, axe checks |
+| Reduced motion and phone layout                                                      | All browser checks use reduced motion; screenshots and overflow assertions at 390px                                                   |
+| Production and direct loads/refresh                                                  | Live root plus /#message load/reload checked in real browsers                                                                         |
+| GitHub/Vercel independent publication                                                | Dedicated repository/project; verified Git link and main production branch                                                            |
 
 ## Remaining limitations
+
 - Browser automation ran in Chrome/Chromium; Safari/Firefox and a full screen-reader audit were not run.
 - No participant comprehension study was performed; the takeaway is explicit, but user understanding has not been empirically measured.
 - JavaScript is required to render the app. Motion is never required.
@@ -106,4 +122,5 @@ Automated accessibility checks and keyboard/viewport testing are not a full assi
 - State is in-memory and resets on reload. There is no shared state, notification, external feed or real AI judgment.
 
 ### Migration CI evidence
+
 GitHub Actions [36796055930](https://github.com/andy-fitts-slalom/beyond-the-headline-count/actions/runs/36796055930) passed for `c07f3db` on the refactor branch, including clean install, unit tests, build and browser checks on Linux Chromium. This is CI verification, not deployment.

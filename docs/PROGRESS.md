@@ -1,6 +1,13 @@
 # Progress and continuation
 
+## Documentation sweep — 2026-09-30
+
+Refreshed README onboarding, workflows, setup, project structure and dated verification context. Corrected current branding guidance and explicitly marked superseded planning/migration records as historical. Vesper UI 2.0.0 remains the vendored dependency; runtime source and package manifests contain no Meridian references. Historical screenshots, branch deployment exclusions and compatibility storage keys are preserved.
+
+Validation: 7 unit tests, production build and 20 local browser tests passed; README local links resolve. Browser preview startup initially hit sandbox EPERM, then passed with approved local-server access. No application behavior or dataset changed. Existing production evidence remains dated; this documentation sweep does not claim a new live-site verification.
+
 ## Current handoff — Frame / Vesper 2.0.0, live and verified
+
 - Main-only upgrade; all prior commits and screenshot evidence retained.
 - npm test: 7 passed; npm run build: passed; npm run test:e2e: 20 passed.
 - Rendered desktop, narrow-phone, dialog, zoom-equivalent and print screenshots inspected; see docs/screenshots/vesper-2.0.0.
@@ -10,6 +17,7 @@
 - No domain or routing changes. The parent task's automatic approval review block on a new production domain remains; explicit approval is required for that separate change.
 
 ## Historical handoff — Meridian UI 1.0.0 migration complete, not deployed
+
 - Current checkout: p-case-studies/p302-data-story. Review branch: refactor/meridian-ui-1.0.0. User authorized discrete GitHub milestone pushes; main remains untouched.
 - Shared release is committed in vendor/ with npm lockfile integrity. Clean independent install/build passed.
 - Local preview: http://127.0.0.1:4387. Restart with npm run preview -- --host 127.0.0.1 --port 4387 --strictPort.
@@ -18,8 +26,8 @@
 - Representative screenshots and state/viewport index: docs/screenshots/meridian-1.0.0/README.md. Detailed verification and limitations: docs/VERIFICATION.md.
 - No unresolved implementation blocker. No refactor deployment: vercel.json disables this branch; a separate publication request is required before merging/pushing main or deploying. Previous live-site verification below does not verify this migration.
 
-
 ## Prior production handoff — 2026-09-30 (predates Meridian migration)
+
 - Live: https://beyond-the-headline-count.vercel.app (opened and verified).
 - Public repository: https://github.com/andy-fitts-slalom/beyond-the-headline-count.
 - Vercel: Andy-Protogen / beyond-the-headline-count, linked to the repository with production branch main. No manual connection step remains.
@@ -30,6 +38,7 @@
 - The record below is chronological; earlier pending statuses are historical, not current blockers.
 
 ## 2026-09-30 — Planning
+
 - Workspace initially contained only BRIEF.md; compared byte-for-byte with supplied source (identical), then copied source as requested.
 - No existing repository or ancestor AGENTS.md was found.
 - GitHub identity verified outside the network sandbox: andy-fitts-slalom, repo/workflow scopes. Requested repository was not found under this account.
@@ -38,6 +47,7 @@
 - Vercel account/team access remains to be checked. No deployment has been created or verified.
 
 ## 2026-09-30 — Dataset milestone
+
 - Created dedicated repository and pushed planning commit. User subsequently authorized public visibility; GitHub now confirms PUBLIC.
 - Deterministic dataset: 240 records; Signal 120 items / 24 stories / 18 of 60 priority inclusions, Frame 72 / 42 / 27 of 36, Folio 48 / 36 / 24 of 30.
 - Seven initial metric tests pass: regeneration, referential integrity, dates, originals, deduplication, rankings, denominator independence and unavailable vs zero.
@@ -45,6 +55,7 @@
 - User offered to connect Vercel to GitHub. Continue local implementation and deployment preparation; intended production branch is main.
 
 ## 2026-09-30 — Story structure and core interactions
+
 - Four editorial chapters implemented with record-derived SVG bars, rate cards and comparison table.
 - Implemented volume toggle, persistent highlighting across comparisons, reset, article evidence dialog, evidence search, JSON download and unavailable-data fixture.
 - Independent review identified and fixed fragment-root evidence navigation, long chart labels, and a hard-coded unavailable example. Campaign names simplified to Signal, Frame and Folio; purposes retain campaign type.
@@ -52,6 +63,7 @@
 - Created Vercel project beyond-the-headline-count under sole available team andy-protogen. Browser acceptance suite and deployment verification are in progress.
 
 ## 2026-09-30 — Verification milestone
+
 - All 12 browser acceptance cases pass across desktop and 390×844 phone viewports, with reduced motion, zero axe violations and zero console/uncaught browser errors.
 - Reviewed actual screenshots for hero and message sections on both sizes; no clipping. Fixed keyboard accessibility of the horizontally scrollable mobile comparison table.
 - Download error injection and empty evidence search both recover; evidence Escape restores focus. The no-priority fixture renders Unavailable via shared metrics.
@@ -59,8 +71,8 @@
 - Added GitHub Actions verification and font license notices; self-hosted fonts avoid third-party runtime calls.
 - Live deployment checks remain pending at this milestone.
 
-
 ## 2026-09-30 — Publication and durable handoff
+
 - GitHub user andy-fitts-slalom and Vercel user andyfitts-4966 were verified; sole accessible Vercel team was Andy-Protogen.
 - Both Git-triggered deployment and explicit production CLI deployment reached Ready. Production alias is https://beyond-the-headline-count.vercel.app.
 - Opened actual deployed URL, inspected rendered page and screenshots, and reran all 12 browser cases against production successfully. Verified root and direct chapter reload, mobile flow, downloads and error recovery.
@@ -71,6 +83,7 @@
 - All actions are real local controls; no fake notifications or shared backend behavior. No real client data, proprietary code, internal corpus, or other case-study material was accessed.
 
 ## 2026-09-30 — Meridian UI migration started (not deployed)
+
 - Found relocated checkout at p-case-studies/p302-data-story. Started from clean main at 2225488; no unrelated modifications.
 - Read project brief, instructions and continuation/verification notes, all five shared design-system documents, and actual package CSS/Vue/chart exports.
 - Baseline: 7 unit tests, production build and 12 browser tests passed. Initial sandbox regeneration was denied by the stale workspace root; rerunning with authorized filesystem access passed. Port 4173 had stale preview listeners; baseline browser verification uses this checkout's dedicated port 4387.
@@ -80,6 +93,7 @@
 - Vendored the supplied 1.0.0 tarball and installed via file:vendor/meridian-ui-1.0.0.tgz. No sibling runtime dependency, registry package or symlink.
 
 ## 2026-09-30 — Meridian presentation milestone (not deployed)
+
 - Shared parent masthead/footer, mark/favicon and bundled fonts installed. Removed direct @fontsource dependencies.
 - Replaced the old palette/font/control stylesheet with semantic-token composition rules; shared button/field/table/segmented/dialog recipes and Badge/Notice/Empty primitives cover existing states.
 - One local campaign mapping supplies chart SVG and card/control appearance. Responsive SVG user units match rendered pixels for minimum 12px axes and 14px labels/values.
@@ -87,6 +101,7 @@
 - Additional width, zoom, keyboard, state screenshot and package-portability checks are next.
 
 ## 2026-09-30 — Responsive/accessibility verification milestone (not deployed)
+
 - Required npm test (7), npm run build and npm run test:e2e (19) pass. Original 12 browser checks are unchanged; added seven presentation regressions.
 - No page overflow at 320, 390, 768, 1440px; effective SVG label/axis sizes checked, stable campaign colors agree across figures and strips; all comparisons remain visible.
 - New keyboard test exposed existing showModal-before-render timing; awaited Vue nextTick before native showModal so autofocus reaches Close. Native dialog keeps page background inert; Escape restores opener focus. Browser chrome remains reachable per native behavior.
@@ -96,18 +111,21 @@
 - Added this refactor branch to GitHub Actions verification only. Vercel branch deployments remain disabled; read-only deployment listing shows only prior main releases.
 
 ## 2026-09-30 — Migration handoff complete
+
 - GitHub Actions 36796055930 passed for verification milestone c07f3db on the refactor branch. The final documentation/screenshot milestone does not alter runtime behavior.
 - Saved inspected local screenshots with explicit viewport/state metadata, updated README/agent scope, decisions, package/font provenance and verification limits.
 - Milestones pushed: d870abb package/baseline and deployment guard; 697227b shared presentation; c07f3db responsive checks and autofocus fix; final documentation commit follows.
 - No publication performed. Production remains the pre-migration main release. Local preview is the review surface; future publication requires separate authorization.
 
 ## 2026-09-30 — Frame / Vesper migration started on main
+
 - Clean main at 0cd8d23 already includes all Meridian migration commits. Confirmed origin is the renamed frame repository and local Vercel link identifies frame.
 - Read project and shared design-system guidance, inspected implementation and actual baseline screenshot. Baseline: 7 unit tests, build and 19 browser checks passed. Sandbox prevented binding preview port; approved local server/browser access resolved it.
 - Upgraded the vendored release, namespace/classes/tokens, mark/favicon, page identity, download filename and active docs. Preserved source records, metrics, generator, historical planning/screenshots and branch guard.
 - Required final checks and deployment verification remain pending.
 
 ## 2026-09-30 — Frame publication verified
+
 - Pushed c7a129f and b6e480b to main. Vercel automatically built the renamed Frame repository, main revision b6e480b, to production Ready. The project API retains its old repository display slug, but numeric repository ID and new deployment metadata confirm frame/main; no relinking was needed.
 - Opened the actual existing production alias, inspected desktop and phone screenshots, and passed all 20 browser checks against it, including complete download equality and every direct chapter refresh.
 - Preserved deployed screenshots under docs/screenshots/vesper-production and a learner acceptance audit in docs/VERIFICATION.md. No historical screenshots were removed.
