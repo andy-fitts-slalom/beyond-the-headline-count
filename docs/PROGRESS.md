@@ -1,10 +1,13 @@
 # Progress and continuation
 
-## Current handoff — Frame / Vesper 2.0.0, local verification complete
+## Current handoff — Frame / Vesper 2.0.0, live and verified
 - Main-only upgrade; all prior commits and screenshot evidence retained.
 - npm test: 7 passed; npm run build: passed; npm run test:e2e: 20 passed.
 - Rendered desktop, narrow-phone, dialog, zoom-equivalent and print screenshots inspected; see docs/screenshots/vesper-2.0.0.
-- Publication and main-revision verification at the existing production domain are next.
+- Live: https://beyond-the-headline-count.vercel.app — opened and inspected; all 20 production browser checks passed.
+- Main commits: c7a129f (rebrand), b6e480b (tests/evidence). Git-triggered production deployment dpl_EmLpomr7bhtY13sjTvMwobc69LJy is Ready for b6e480bf05c710dede3af417d321871ea84eaf71.
+- Independent archive install/build passed without a sibling package folder. GitHub Actions run 36824681618 passed its install/unit/build/browser steps.
+- No domain or routing changes. The parent task's automatic approval review block on a new production domain remains; explicit approval is required for that separate change.
 
 ## Historical handoff — Meridian UI 1.0.0 migration complete, not deployed
 - Current checkout: p-case-studies/p302-data-story. Review branch: refactor/meridian-ui-1.0.0. User authorized discrete GitHub milestone pushes; main remains untouched.
@@ -103,3 +106,9 @@
 - Read project and shared design-system guidance, inspected implementation and actual baseline screenshot. Baseline: 7 unit tests, build and 19 browser checks passed. Sandbox prevented binding preview port; approved local server/browser access resolved it.
 - Upgraded the vendored release, namespace/classes/tokens, mark/favicon, page identity, download filename and active docs. Preserved source records, metrics, generator, historical planning/screenshots and branch guard.
 - Required final checks and deployment verification remain pending.
+
+## 2026-09-30 — Frame publication verified
+- Pushed c7a129f and b6e480b to main. Vercel automatically built the renamed Frame repository, main revision b6e480b, to production Ready. The project API retains its old repository display slug, but numeric repository ID and new deployment metadata confirm frame/main; no relinking was needed.
+- Opened the actual existing production alias, inspected desktop and phone screenshots, and passed all 20 browser checks against it, including complete download equality and every direct chapter refresh.
+- Preserved deployed screenshots under docs/screenshots/vesper-production and a learner acceptance audit in docs/VERIFICATION.md. No historical screenshots were removed.
+- Final documentation/evidence commit contains no application change; verify its resulting deployment metadata after push.

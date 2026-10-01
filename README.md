@@ -1,6 +1,6 @@
 # Frame
 
-**Vesper UI 2.0.0 upgrade on main.** Local preview: http://127.0.0.1:4387. See [verification](docs/VERIFICATION.md) for release evidence and limitations.
+**Frame / Vesper UI 2.0.0 is live and verified from main.** Local preview: http://127.0.0.1:4387. See [verification](docs/VERIFICATION.md) for release evidence and limitations.
 
 An interactive P302 editorial data story for the **entirely fictional Vesper Media Group**. All campaigns, outlets, articles, excerpts and annotations are invented. The story moves from an apparent volume winner to distinct stories and message inclusion in campaign-specific priority outlets.
 

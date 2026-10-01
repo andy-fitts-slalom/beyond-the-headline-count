@@ -14,7 +14,7 @@
 ### Learner readiness audit
 | Requirement | Evidence / disposition |
 | --- | --- |
-| Live accessible site | Existing domain confirmed on Frame project; upgraded deployment verification pending below |
+| Live accessible site | Opened existing domain on Frame project; upgraded production revision and 20 browser checks verified below |
 | Core flows match planning | Four chapters and all original behavior retained; automated journeys and screenshot review |
 | Logical AI scaffolding/context | Root AGENTS, dated brief addendum, DATA, DECISIONS, PROGRESS and VERIFICATION |
 | Root README and LICENSE | Current setup/limits/delivery links; original MIT license retained; font/package notices current |
@@ -24,6 +24,16 @@
 | Brief shows planning and matches build | Original planning retained verbatim with dated overriding naming/design/delivery addendum |
 | Honest scope | Fictional dataset and labels, no causal/unique-reach/research claim; no client content |
 | Routing / protection | Existing production URL retained; password protection optional and not introduced; prior routing approval block remains |
+
+### Production release — 2026-09-30
+- Repository: https://github.com/andy-fitts-slalom/frame (public), main only. Commits c7a129f (Vesper migration) and b6e480b (browser/visual evidence) pushed successfully.
+- Vercel project Frame (`prj_S5UYgdsrYCKHNIsaoe1icCvkwWZS`, andy-protogen) automatically deployed `b6e480bf05c710dede3af417d321871ea84eaf71`, ref main, repository frame, to production Ready: `dpl_EmLpomr7bhtY13sjTvMwobc69LJy`, https://frame-dh3dlwfsp-andy-protogen.vercel.app.
+- Actual reviewer URL: **https://beyond-the-headline-count.vercel.app**. Vercel inspect confirms this existing alias serves that deployment. Opened in Chrome, title Frame — Vesper Media Group, desktop and phone screenshots inspected. No login/password required.
+- `PLAYWRIGHT_BASE_URL=https://beyond-the-headline-count.vercel.app npm run test:e2e`: **20 passed**. Same complete desktop/mobile/width, keyboard, recovery, print, reduced-motion, zoom-equivalent and direct-anchor checks as local release. Saved [production evidence](screenshots/vesper-production/README.md).
+- Isolated committed archive in a temporary directory passed `npm ci --offline` and production build without sibling source. Lockfile pins the committed Vesper tarball.
+- [GitHub Actions 36824681618](https://github.com/andy-fitts-slalom/frame/actions/runs/36824681618) passed clean install, seven unit tests, build and 20 browser cases on Linux Chromium.
+- Routing was not changed. The parent task's automatic approval review block on a new domain remains a separate approval requirement, not a blocker to this existing live URL. All earlier screenshots and history remain.
+- The final handoff commit only updates documentation/evidence. Its deployment metadata is checked after push; the full journey evidence above applies to the identical application from b6e480b.
 
 ---
 

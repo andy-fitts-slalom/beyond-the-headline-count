@@ -31,3 +31,7 @@
 - Retain dataset metadata and generator bytes for exact download continuity. The frame campaign ID and its records are unrelated to product renaming.
 - Use paper/editorial semantic tokens, V-and-star mark, DM Sans UI, Libre Caslon display and one local categorical mapping. Existing print black/white rules are intentional ink-saving presentation.
 - Keep the existing production domain; a new domain/routing change was blocked by automatic approval review in the parent task and requires separate explicit approval.
+
+## 2026-09-30 — Frame release evidence
+- Use Vercel's Git-triggered main deployment and inspect its commit metadata plus existing production alias; do not manually change routing or project settings. Renamed repository numeric identity is preserved.
+- Verified full production browser suite on b6e480b; final handoff commit changes only docs/screenshots. Earlier planning, deployment records and screenshots remain chronological evidence.
