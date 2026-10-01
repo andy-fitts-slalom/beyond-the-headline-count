@@ -12,8 +12,6 @@
     "test:e2e": "playwright test"
   },
   "dependencies": {
-    "@fontsource/dm-sans": "^5.3.0",
-    "@fontsource/libre-caslon-display": "^5.3.0",
     "@meridian/ui": "file:vendor/meridian-ui-1.0.0.tgz",
     "d3-scale": "^4.0.2",
     "d3-shape": "^3.2.0",

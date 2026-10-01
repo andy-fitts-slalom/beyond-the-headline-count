@@ -59,3 +59,10 @@
 - Dataset SHA-256: a4e7b743f77d0a52582ca64e7ca1a856b9e4dd824ea4d826521b5c0e1b6cf374.
 - User authorized milestone GitHub pushes after the pasted local-only instructions. Work is on refactor/meridian-ui-1.0.0, never main. vercel.json disables deployments for this branch before the first push, using Vercel's documented git.deploymentEnabled map.
 - Vendored the supplied 1.0.0 tarball and installed via file:vendor/meridian-ui-1.0.0.tgz. No sibling runtime dependency, registry package or symlink.
+
+## 2026-09-30 — Meridian presentation milestone (not deployed)
+- Shared parent masthead/footer, mark/favicon and bundled fonts installed. Removed direct @fontsource dependencies.
+- Replaced the old palette/font/control stylesheet with semantic-token composition rules; shared button/field/table/segmented/dialog recipes and Badge/Notice/Empty primitives cover existing states.
+- One local campaign mapping supplies chart SVG and card/control appearance. Responsive SVG user units match rendered pixels for minimum 12px axes and 14px labels/values.
+- Kept native dialog and domain functions; all 12 original browser checks and production build pass on local port 4387. Dataset and metric module are unchanged.
+- Additional width, zoom, keyboard, state screenshot and package-portability checks are next.

@@ -1,5 +1,12 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
+import {
+  MeridianBrand,
+  MeridianBadge,
+  MeridianNotice,
+  MeridianEmpty,
+} from "@meridian/ui/vue";
+import { campaignColors, chartStyle } from "./presentation/campaignStyle";
 import { scaleLinear } from "d3-scale";
 import {
   dataset,
@@ -109,20 +116,20 @@ function download() {
 }
 </script>
 <template>
-  <a class="skip" href="#story">Skip to story</a>
+  <a class="ms-skip" href="#story">Skip to story</a>
   <header class="masthead">
-    <a href="#" class="brand" aria-label="Meridian Signal Group, top"
-      ><span class="brandmark">M</span> MERIDIAN
-      <span class="brand-tail">SIGNAL GROUP</span></a
-    ><span class="edition">THE MEASUREMENT EDIT / P302</span
-    ><a href="#methodology">Methodology <span aria-hidden="true">↗</span></a>
+    <MeridianBrand href="#" aria-label="Meridian Signal Group, top" />
+    <span class="edition">THE MEASUREMENT EDIT / P302</span>
+    <a class="ms-button ms-button--quiet" href="#methodology">Methodology</a>
   </header>
   <main id="story">
     <section class="hero" aria-labelledby="title">
       <div class="eyebrow">
         <span class="dot"></span> A FICTIONAL COMMUNICATIONS DATA STORY
       </div>
-      <h1 id="title">Beyond the<br /><em>headline count.</em></h1>
+      <h1 id="title" class="ms-display">
+        Beyond the<br /><em>headline count.</em>
+      </h1>
       <div class="hero-bottom">
         <p class="dek">
           The biggest coverage number makes a good headline.<br
@@ -130,7 +137,12 @@ function download() {
           />
           Does it tell the whole story?
         </p>
-        <a href="#volume" class="round-link" aria-label="Begin the story">↓</a>
+        <a
+          href="#volume"
+          class="ms-button ms-button--secondary begin-link"
+          aria-label="Begin the story"
+          >Begin the story</a
+        >
       </div>
       <div class="meta">
         <span>{{ dataset.campaigns.length }} CAMPAIGNS</span
@@ -138,7 +150,7 @@ function download() {
         ><span>ALL DATA INVENTED</span>
       </div>
     </section>
-    <nav class="story-nav" aria-label="Story chapters">
+    <nav class="story-nav ms-tabs" aria-label="Story chapters">
       <a href="#volume">01 <span>The count</span></a
       ><a href="#reveal">02 <span>The repeat</span></a
       ><a href="#message">03 <span>The message</span></a
@@ -186,12 +198,17 @@ function download() {
           :key="r.campaign.id"
           :aria-pressed="selected === r.campaign.id"
           @click="selected = selected === r.campaign.id ? '' : r.campaign.id"
-          :class="['campaign-button', r.campaign.id]"
+          :style="{ '--campaign': campaignColors[r.campaign.id] }"
+          :class="['ms-button', 'ms-button--secondary', 'campaign-button']"
         >
           <span>{{ String(i + 1).padStart(2, "0") }}</span>
           {{ r.campaign.name }}
-          <span v-if="selected === r.campaign.id">✓</span></button
-        ><button class="text-button" @click="reset">Reset story</button>
+          <span v-if="selected === r.campaign.id" class="ms-sr-only"
+            >Following</span
+          ></button
+        ><button class="ms-button ms-button--quiet text-button" @click="reset">
+          Reset story
+        </button>
       </div>
       <p class="selection-note" role="status">
         {{
@@ -212,8 +229,8 @@ function download() {
         </article>
       </div>
       <a class="chapter-next" href="#reveal"
-        >Next: what the count hides <span>↓</span></a
-      >
+        >Next: what the count hides <span></span
+      ></a>
     </section>
     <section id="reveal" class="chapter reveal">
       <div class="chapter-title">
@@ -243,13 +260,18 @@ function download() {
         </div>
         <div class="chart-panel">
           <div class="panel-label">CHANGE THE UNIT <span>FIG. 02</span></div>
-          <div class="segmented" aria-label="Volume comparison unit">
+          <div
+            class="segmented ms-segmented"
+            aria-label="Volume comparison unit"
+          >
             <button
+              class="ms-button ms-button--quiet"
               :aria-pressed="mode === 'published'"
               @click="mode = 'published'"
             >
               Published items</button
             ><button
+              class="ms-button ms-button--quiet"
               :aria-pressed="mode === 'distinct'"
               @click="mode = 'distinct'"
             >
@@ -271,7 +293,7 @@ function download() {
       <details class="syndication">
         <summary>
           One story, {{ repeats.length }} placements
-          <span>Inspect a concrete example +</span>
+          <span>Inspect a concrete example</span>
         </summary>
         <p>
           Story group {{ repeatGroup.id }} contains an original and
@@ -290,13 +312,13 @@ function download() {
                 : "SYNDICATED COPY"
             }}</span
             ><strong>{{ outlet(a.outletId)?.name }}</strong
-            ><span>{{ dateLabel(a.date) }} ↗</span>
+            ><span>{{ dateLabel(a.date) }} </span>
           </button>
         </div>
       </details>
       <div class="chapter-navigation">
-        <a href="#volume">↑ Back to the count</a
-        ><a href="#message">Next: did the message land? ↓</a>
+        <a href="#volume"> Back to the count</a
+        ><a href="#message">Next: did the message land? </a>
       </div>
     </section>
     <section id="message" class="chapter">
@@ -316,6 +338,7 @@ function download() {
         <article
           v-for="r in rows"
           :key="r.campaign.id"
+          :style="{ '--campaign': campaignColors[r.campaign.id] }"
           :class="[
             'rate-card',
             r.campaign.id,
@@ -336,7 +359,7 @@ function download() {
             role="img"
             :aria-label="`${r.included} of ${r.priority} priority placements include the message`"
           >
-            <rect width="100" height="4" fill="#dfdcd3" />
+            <rect width="100" height="4" :fill="chartStyle.grid" />
             <rect
               :width="percent(r.rate ?? 0)"
               height="4"
@@ -352,10 +375,10 @@ function download() {
             <p>“{{ r.campaign.primaryMessage }}”</p>
           </div>
           <button
-            class="text-button"
+            class="ms-button ms-button--quiet text-button"
             @click="showCampaignEvidence(r.campaign.id)"
           >
-            Read supporting articles ↗
+            Read supporting articles
           </button>
         </article>
       </div>
@@ -371,17 +394,26 @@ function download() {
             <span class="small-label">LOOK AT THE UNDERLYING COVERAGE</span>
             <h3>Evidence, not just a percentage.</h3>
           </div>
-          <span class="fiction-tag">FICTIONAL EDITORIAL ANNOTATIONS</span>
+          <MeridianBadge tone="neutral" class="fiction-tag"
+            >Fictional editorial annotations</MeridianBadge
+          >
         </div>
         <div class="evidence-filters">
-          <label
-            >Campaign<select ref="campaignSelect" v-model="evidenceCampaign">
+          <label class="ms-field"
+            ><span class="ms-field__label">Campaign</span
+            ><select
+              class="ms-input"
+              ref="campaignSelect"
+              v-model="evidenceCampaign"
+            >
               <option v-for="c in dataset.campaigns" :key="c.id" :value="c.id">
                 {{ c.name }}
               </option>
             </select></label
-          ><label
-            >Find an article<input
+          ><label class="ms-field"
+            ><span class="ms-field__label">Find an article</span
+            ><input
+              class="ms-input"
               v-model="query"
               type="search"
               placeholder="Search headlines, excerpts or outlets"
@@ -401,24 +433,30 @@ function download() {
             <span class="article-outlet"
               >{{ outlet(a.outletId)?.name
               }}<small>{{ dateLabel(a.date) }}</small></span
-            ><strong>{{ a.headline }}</strong
-            ><span :class="['message-label', { included: a.messageIncluded }]"
-              >{{ a.messageIncluded ? "Message included" : "Message absent" }}
-              <span aria-hidden="true">↗</span></span
+            ><strong>{{ a.headline }}</strong>
+            <MeridianBadge
+              :tone="a.messageIncluded ? 'info' : 'neutral'"
+              class="message-label"
+              >{{
+                a.messageIncluded ? "Message included" : "Message absent"
+              }}</MeridianBadge
             >
           </button>
         </div>
-        <div v-else class="empty-state">
-          <h4>No matching articles</h4>
-          <p>
-            Try another phrase. The story’s overall comparison has not changed.
-          </p>
-          <button @click="query = ''">Clear search</button>
-        </div>
+        <MeridianEmpty
+          v-else
+          class="empty-state"
+          title="No matching articles"
+          description="Try another phrase. The story’s overall comparison has not changed."
+        >
+          <button class="ms-button ms-button--secondary" @click="query = ''">
+            Clear search
+          </button>
+        </MeridianEmpty>
       </div>
       <div class="chapter-navigation">
-        <a href="#reveal">↑ Back to the repeat</a
-        ><a href="#takeaway">Next: a better question ↓</a>
+        <a href="#reveal"> Back to the repeat</a
+        ><a href="#takeaway">Next: a better question </a>
       </div>
     </section>
     <section id="takeaway" class="takeaway chapter">
@@ -428,13 +466,17 @@ function download() {
         The volume leader is not the message leader. A useful report keeps the
         measures together—and knows which question each one answers.
       </p>
+      <p class="table-hint">
+        On narrow screens, scroll the comparison horizontally. Keyboard users
+        can focus the table and use arrow keys.
+      </p>
       <div
-        class="table-wrap"
+        class="table-wrap ms-table-region"
         tabindex="0"
         role="region"
         aria-label="Campaign comparison, scroll horizontally on small screens"
       >
-        <table>
+        <table class="ms-table">
           <caption>
             Campaign comparison ·
             {{
@@ -477,11 +519,14 @@ function download() {
           message. Report coverage and story diversity alongside message
           inclusion. Investigate audience response separately.
         </p>
-        <button @click="reset" class="light-button">
-          Reset the comparison ↺
+        <button
+          @click="reset"
+          class="ms-button ms-button--secondary light-button"
+        >
+          Reset the comparison
         </button>
       </div>
-      <a href="#message" class="back-link">↑ Revisit the evidence</a>
+      <a href="#message" class="back-link"> Revisit the evidence</a>
     </section>
     <section id="methodology" class="methodology chapter">
       <div>
@@ -492,10 +537,19 @@ function download() {
           demonstration. These are not findings about a real company or the
           wider industry.
         </p>
-        <button class="download-button" @click="download">
-          Download fictional dataset <span>JSON ↓</span>
+        <button
+          class="ms-button ms-button--primary download-button"
+          @click="download"
+        >
+          Download fictional dataset <span>JSON </span>
         </button>
-        <p v-if="downloadError" role="alert">{{ downloadError }}</p>
+        <MeridianNotice
+          v-if="downloadError"
+          title="Download unavailable"
+          tone="danger"
+          announcement="assertive"
+          >{{ downloadError }}</MeridianNotice
+        >
       </div>
       <div class="methods">
         <details open>
@@ -541,18 +595,27 @@ function download() {
             A missing denominator is unavailable, not zero percent. This
             isolated demonstration does not alter the campaign data.
           </p>
-          <button :aria-pressed="demo" @click="demo = !demo">
+          <button
+            class="ms-button ms-button--secondary"
+            :aria-pressed="demo"
+            @click="demo = !demo"
+          >
             {{ demo ? "Hide" : "Show" }} unavailable-data example
           </button>
-          <div v-if="demo" class="unavailable" role="status">
-            <strong>{{ formatRate(unavailableExample.rate) }}</strong>
+          <MeridianNotice
+            v-if="demo"
+            class="unavailable"
+            :title="formatRate(unavailableExample.rate)"
+            tone="neutral"
+            announcement="polite"
+          >
             <p>
               {{ unavailableExample.priority }} eligible priority placements ·
               {{ unavailableExample.included }} included /
               {{ unavailableExample.priority }} eligible. No rate can be
               calculated.
             </p>
-          </div>
+          </MeridianNotice>
         </details>
         <details>
           <summary>What these numbers cannot tell us</summary>
@@ -566,11 +629,11 @@ function download() {
     </section>
   </main>
   <footer>
-    <a class="brand" href="#">MERIDIAN SIGNAL GROUP</a
-    ><span>Beyond the Headline Count · P302</span
+    <MeridianBrand href="#" /><span>Beyond the Headline Count · P302</span
     ><span>A fictional story. A useful question.</span>
   </footer>
   <dialog
+    class="ms-dialog"
     ref="evidence"
     aria-labelledby="evidence-title"
     @close="returnFocus?.focus()"
@@ -580,11 +643,12 @@ function download() {
       ><div class="dialog-top">
         <span class="eyebrow">ARTICLE EVIDENCE / FICTIONAL</span
         ><button
+          class="ms-button ms-button--secondary"
           autofocus
           @click="closeEvidence"
           aria-label="Close article evidence"
         >
-          Close ×
+          Close
         </button>
       </div>
       <p class="small-label">
@@ -592,7 +656,7 @@ function download() {
         {{ dateLabel(article.date) }}
       </p>
       <h2 id="evidence-title">{{ article.headline }}</h2>
-      <blockquote>{{ article.excerpt }}</blockquote>
+      <blockquote class="ms-quote">{{ article.excerpt }}</blockquote>
       <dl class="evidence-meta">
         <dt>Campaign primary message</dt>
         <dd>{{ articleCampaign.primaryMessage }}</dd>
@@ -606,9 +670,7 @@ function download() {
         </dd>
         <dt>Prepared message label</dt>
         <dd>
-          {{
-            article.messageIncluded ? "Message included" : "Message absent"
-          }}
+          {{ article.messageIncluded ? "Message included" : "Message absent" }}
           — {{ article.annotationRationale }}
         </dd>
         <dt>Story group</dt>
