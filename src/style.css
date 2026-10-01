@@ -11,6 +11,9 @@ body {
   color: var(--vs-text);
   font-family: var(--vs-font-ui);
 }
+select.vs-input {
+  padding-right: calc(12px + var(--vs-space-4));
+}
 a {
   color: inherit;
   text-underline-offset: 4px;
