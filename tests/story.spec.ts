@@ -72,7 +72,7 @@ test('fictional JSON download matches source records', async ({ page }) => {
   const pending = page.waitForEvent('download');
   await page.getByRole('button', { name: 'Download fictional dataset' }).click();
   const download = await pending;
-  expect(download.suggestedFilename()).toBe('meridian-fictional-dataset.json');
+  expect(download.suggestedFilename()).toBe('frame-fictional-dataset.json');
   const path = await download.path();
   expect(path).toBeTruthy();
   const downloaded = JSON.parse(await readFile(path!, 'utf8'));

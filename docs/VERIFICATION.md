@@ -1,5 +1,32 @@
 # Verification — 2026-09-30
 
+## Frame / Vesper UI 2.0.0 — local release verification
+
+- Required checks: `npm test` 7/7, `npm run build` successful, `npm run test:e2e` 20/20. Baseline was 7/build/19. Existing assertions are retained with namespace and download-name updates; added identity/fonts/mark, all four chapter refreshes and syndicated evidence focus return.
+- Local Chrome on port 4387: 320/390/768/1440px layouts, original 390×844 touch journey, 720×500 at DPR 2 for 200% zoom-equivalent layout. No page overflow; chart axes at least 12px and direct labels/values 14px effective size. All series remain and bar/strip colors match the local mapping.
+- Toggles retain priority denominators; campaign/reset, inclusion cards, six-example evidence search and empty recovery, dialog autofocus/containment/Escape/focus return, syndication, null Unavailable, exact full JSON download and injected error/reset pass. All chapter URLs refresh. Reduced motion is enabled throughout. Print media retains all four chapters and comparison data.
+- Axe WCAG A/AA checks and browser error assertions pass in the tested default/modal/recovery states. The mark and favicon match the supplied SVG after asset-minification normalization; DM Sans/Libre Caslon computed families are verified.
+- Inspected actual desktop hero/full-story composition, 320px direct chart labels, 320px and zoom-equivalent scrollable native dialogs and print takeaway. Evidence index: [Vesper screenshots](screenshots/vesper-2.0.0/README.md). Earlier screenshot directories remain intact.
+- Source data, metric functions and generator have no diff. Dataset SHA-256 `a4e7b743f77d0a52582ca64e7ca1a856b9e4dd824ea4d826521b5c0e1b6cf374`; release SHA-256 `09608c3a9a83ef41aef49059a83054688f3faa92e8f1a7d8592d2eb363594d6f`. Old dataset metadata title is intentional, and campaign ID frame remains data. No old UI namespace or client/company-specific material appears in product source.
+- Initial browser startup was blocked by sandbox port binding and resolved with approved access. New asset assertion was corrected to support Vite's data-URL/minified SVG, without changing the packaged mark.
+- Limits: Chrome only; no physical-phone, screen-reader, native menu zoom, physical print or participant comprehension certification. Zoom is explicit CSS-viewport/DPR equivalence. Static reading does not need animation; rendering needs JavaScript.
+
+### Learner readiness audit
+| Requirement | Evidence / disposition |
+| --- | --- |
+| Live accessible site | Existing domain confirmed on Frame project; upgraded deployment verification pending below |
+| Core flows match planning | Four chapters and all original behavior retained; automated journeys and screenshot review |
+| Logical AI scaffolding/context | Root AGENTS, dated brief addendum, DATA, DECISIONS, PROGRESS and VERIFICATION |
+| Root README and LICENSE | Current setup/limits/delivery links; original MIT license retained; font/package notices current |
+| Meaningful main history | Prior commits preserved; descriptive rebrand and verification increments on main |
+| Media audience design | Vesper paper/editorial tokens, VesperBrand mark, DM Sans UI/Caslon display, restrained ruled figures and direct names/values |
+| Responsive and edge cases | Width matrix, focus, reduced motion, print, empty/error/unavailable, complete download checks |
+| Brief shows planning and matches build | Original planning retained verbatim with dated overriding naming/design/delivery addendum |
+| Honest scope | Fictional dataset and labels, no causal/unique-reach/research claim; no client content |
+| Routing / protection | Existing production URL retained; password protection optional and not introduced; prior routing approval block remains |
+
+---
+
 ## Meridian UI migration — local, not deployed
 
 ### Automated checks

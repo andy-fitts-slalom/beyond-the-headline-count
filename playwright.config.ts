@@ -17,7 +17,7 @@ export default defineConfig({
     { name: "desktop", use: { viewport: { width: 1440, height: 1000 } } },
     {
       name: "mobile",
-      testIgnore: "**/meridian.spec.ts",
+      testIgnore: "**/vesper.spec.ts",
       use: {
         viewport: { width: 390, height: 844 },
         isMobile: true,

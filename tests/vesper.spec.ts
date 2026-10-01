@@ -16,22 +16,22 @@ test.afterEach(async ({ page }) => {
 });
 
 for (const width of [320, 390, 768, 1440]) {
-  test(`Meridian reading and state matrix at ${width}px`, async ({
+  test(`Vesper reading and state matrix at ${width}px`, async ({
     page,
   }, info) => {
     await page.setViewportSize({ width, height: 1000 });
     await page.goto("/");
     await page.evaluate(() => document.fonts.ready);
     await expect(page.locator("html")).toHaveAttribute(
-      "data-ms-theme",
+      "data-vs-theme",
       "paper",
     );
     await expect(page.locator("html")).toHaveAttribute(
-      "data-ms-mode",
+      "data-vs-mode",
       "editorial",
     );
-    await expect(page.locator("body")).toHaveClass(/ms-root/);
-    await expect(page.locator(".masthead .ms-brand__mark")).toBeVisible();
+    await expect(page.locator("body")).toHaveClass(/vs-root/);
+    await expect(page.locator(".masthead .vs-brand__mark")).toBeVisible();
     const noOverflow = async () =>
       expect(
         await page.evaluate(
@@ -220,8 +220,36 @@ test("print retains all chapters and comparison data", async ({
   await expect(page.locator(".story-nav")).not.toBeVisible();
   for (const id of ["volume", "reveal", "message", "takeaway"])
     await expect(page.locator(`#${id}`)).toBeVisible();
-  await expect(page.locator(".ms-table")).toContainText("18/60");
+  await expect(page.locator(".vs-table")).toContainText("18/60");
   await page
     .locator("#takeaway")
     .screenshot({ path: info.outputPath("print-takeaway.png") });
+});
+
+test('Frame identity, packaged typography and all chapter refreshes', async ({ page }) => {
+  await page.goto('/');
+  await page.evaluate(() => document.fonts.ready);
+  await expect(page).toHaveTitle('Frame — Vesper Media Group');
+  await expect(page.locator('.masthead .vs-brand')).toHaveAccessibleName('Vesper Media Group, top');
+  await expect(page.locator('.hero .eyebrow')).toContainText('FRAME');
+  expect(await page.locator('body').evaluate(el => getComputedStyle(el).fontFamily)).toContain('DM Sans');
+  expect(await page.locator('h1').evaluate(el => getComputedStyle(el).fontFamily)).toContain('Libre Caslon Display');
+  const mark = await page.locator('.masthead img').getAttribute('src');
+  expect(mark).toBeTruthy();
+  const favicon = await page.request.get('/favicon.svg');
+  const brandMark = await page.evaluate(async src => (await fetch(src)).text(), mark!);
+  // Vite inlines and minifies the same shipped SVG; compare normalized markup.
+  const normalize = (svg: string) => svg.replace(/"/g, "'").replace(/>\s+</g, '><').trim();
+  expect(normalize(await favicon.text())).toBe(normalize(brandMark));
+  for (const id of ['volume', 'reveal', 'message', 'takeaway']) {
+    await page.goto(`/#${id}`);
+    await page.reload();
+    await expect(page.locator(`#${id} h2`)).toBeVisible();
+  }
+  await page.locator('.syndication summary').click();
+  await expect(page.locator('.copy-list button')).toHaveCount(5);
+  await page.locator('.copy-list button').last().click();
+  await expect(page.getByRole('dialog')).toContainText('Syndicated copy');
+  await page.keyboard.press('Escape');
+  await expect(page.locator('.copy-list button').last()).toBeFocused();
 });
