@@ -1,6 +1,6 @@
 # Fictional dataset and metric contract
 
-All names, premises, outlets, article text, dates and annotations are invented for this independent Meridian Signal Group prototype. No external corpus, real client material, private code or AI judgments are used.
+All names, premises, outlets, article text, dates and annotations are invented for this independent Vesper Media Group prototype. No external corpus, real client material, private code or AI judgments are used.
 
 `src/data/dataset.json` is the deterministic application source. Run `npm run generate:data` (or `node scripts/generate-data.mjs`) to regenerate it byte-for-byte. The generator has no random seed because it uses no randomness, current clock, network or environment inputs. Change the generator deliberately before regenerating; do not manually edit JSON records.
 

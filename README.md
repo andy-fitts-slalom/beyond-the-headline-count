@@ -1,14 +1,14 @@
-# Beyond the Headline Count
+# Frame
 
-**Current branch: Meridian UI 1.0.0 migration, not deployed.** Review `refactor/meridian-ui-1.0.0`. The live URL below serves the earlier release. Local preview: http://127.0.0.1:4387. See [migration evidence](docs/screenshots/meridian-1.0.0/README.md) and [verification](docs/VERIFICATION.md).
+**Vesper UI 2.0.0 upgrade on main.** Local preview: http://127.0.0.1:4387. See [verification](docs/VERIFICATION.md) for release evidence and limitations.
 
-An interactive P302 editorial data story for the **entirely fictional Meridian Signal Group**. All campaigns, outlets, articles, excerpts and annotations are invented. The story moves from an apparent volume winner to distinct stories and message inclusion in campaign-specific priority outlets.
+An interactive P302 editorial data story for the **entirely fictional Vesper Media Group**. All campaigns, outlets, articles, excerpts and annotations are invented. The story moves from an apparent volume winner to distinct stories and message inclusion in campaign-specific priority outlets.
 
 Built independently with **Vue 3, TypeScript, Vite and D3 scales with Vue-rendered SVG**. No database, AI service, notifications, shared backend state, or analytics feed. Fonts and data are served locally with the app. All four chapters work without animation; JavaScript is required to render the Vue application.
 
-- Repository: https://github.com/andy-fitts-slalom/beyond-the-headline-count (public, as subsequently authorized)
+- Repository: https://github.com/andy-fitts-slalom/frame (public, as subsequently authorized)
 - Production URL: https://beyond-the-headline-count.vercel.app — opened and browser-verified on September 30, 2026.
-- Vercel project: `andy-protogen/beyond-the-headline-count`; connected GitHub repository, verified production branch `main`.
+- Vercel project: `andy-protogen/frame`; connected GitHub repository, verified production branch `main`.
 
 ## Run and verify
 
@@ -73,7 +73,7 @@ Vercel settings are in `vercel.json`: Vite, `npm ci`, `npm run build`, output `d
 To deploy manually with authorized account access:
 
 ```sh
-npx vercel link --project beyond-the-headline-count --scope andy-protogen
+npx vercel link --project frame --scope andy-protogen
 npx vercel --prod --scope andy-protogen
 ```
 
@@ -81,6 +81,8 @@ Never commit `.vercel`, `.env*`, credentials or build output. Open and test the 
 
 ## Shared design system
 
-`@meridian/ui` 1.0.0 is installed from `vendor/meridian-ui-1.0.0.tgz`; keep the tarball and lockfile together. `npm ci` works without the sibling design-system source. Theme is paper, mode is editorial; package fonts/styles precede the app composition stylesheet. `src/presentation/campaignStyle.ts` maps campaign IDs to the shared chart palette, without changing domain metrics.
+`@vesper/ui` 2.0.0 is installed from `vendor/vesper-ui-2.0.0.tgz`; keep the tarball and lockfile together. `npm ci` works without the sibling design-system source. Theme is paper, mode is editorial; package fonts/styles precede the app composition stylesheet. `src/presentation/campaignStyle.ts` maps campaign IDs to the shared chart palette, without changing domain metrics.
 
-For this migration, GitHub milestone pushes are authorized on `refactor/meridian-ui-1.0.0` only. Its Vercel auto-deployments are disabled in `vercel.json`. A separate user request is needed to merge to main or publish.
+Work and descriptive milestone commits are authorized on main. Preserve the historical refactor branch deployment guard. The existing production domain remains `beyond-the-headline-count.vercel.app`; routing changes require explicit user approval after a prior automatic approval review block. The project name is Frame. No domain change is part of this release.
+
+The immutable dataset retains its original metadata title, “Beyond the Headline Count.” The campaign ID `frame` is data, independent of the product name. Downloads are named `frame-fictional-dataset.json` and contain the complete unchanged dataset.

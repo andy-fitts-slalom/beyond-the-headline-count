@@ -1,6 +1,12 @@
 # Progress and continuation
 
-## Current handoff — Meridian UI 1.0.0 migration complete, not deployed
+## Current handoff — Frame / Vesper 2.0.0, local verification complete
+- Main-only upgrade; all prior commits and screenshot evidence retained.
+- npm test: 7 passed; npm run build: passed; npm run test:e2e: 20 passed.
+- Rendered desktop, narrow-phone, dialog, zoom-equivalent and print screenshots inspected; see docs/screenshots/vesper-2.0.0.
+- Publication and main-revision verification at the existing production domain are next.
+
+## Historical handoff — Meridian UI 1.0.0 migration complete, not deployed
 - Current checkout: p-case-studies/p302-data-story. Review branch: refactor/meridian-ui-1.0.0. User authorized discrete GitHub milestone pushes; main remains untouched.
 - Shared release is committed in vendor/ with npm lockfile integrity. Clean independent install/build passed.
 - Local preview: http://127.0.0.1:4387. Restart with npm run preview -- --host 127.0.0.1 --port 4387 --strictPort.
@@ -91,3 +97,9 @@
 - Saved inspected local screenshots with explicit viewport/state metadata, updated README/agent scope, decisions, package/font provenance and verification limits.
 - Milestones pushed: d870abb package/baseline and deployment guard; 697227b shared presentation; c07f3db responsive checks and autofocus fix; final documentation commit follows.
 - No publication performed. Production remains the pre-migration main release. Local preview is the review surface; future publication requires separate authorization.
+
+## 2026-09-30 — Frame / Vesper migration started on main
+- Clean main at 0cd8d23 already includes all Meridian migration commits. Confirmed origin is the renamed frame repository and local Vercel link identifies frame.
+- Read project and shared design-system guidance, inspected implementation and actual baseline screenshot. Baseline: 7 unit tests, build and 19 browser checks passed. Sandbox prevented binding preview port; approved local server/browser access resolved it.
+- Upgraded the vendored release, namespace/classes/tokens, mark/favicon, page identity, download filename and active docs. Preserved source records, metrics, generator, historical planning/screenshots and branch guard.
+- Required final checks and deployment verification remain pending.

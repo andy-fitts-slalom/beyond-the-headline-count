@@ -24,3 +24,10 @@
 - Await nextTick before native showModal to allow initial close-button autofocus; leave Escape, inert background and return focus native.
 - User subsequently requested milestone GitHub pushes. Use only refactor/meridian-ui-1.0.0 and disable that branch via git.deploymentEnabled before pushing, per [Vercel configuration](https://vercel.com/docs/project-configuration/git-configuration#gitdeploymentenabled). Main and production are unchanged.
 - Zoom verification uses a 720×500 CSS viewport/DPR 2 to model a 1440×1000 display at 200%; CSS zoom is not equivalent for top-layer dialog viewport sizing and was not used as a product workaround.
+
+## 2026-09-30 — Frame / Vesper 2.0.0 migration
+- The user now authorizes main-only rebrand commits, push and publication verification, superseding earlier branch-only scope. Retain historical branch deployment guard and all existing commits/screenshots.
+- Product Frame and parent Vesper Media Group use the supplied portable Vesper 2.0.0 package. Keep the narrative headline as editorial content, with Frame identified above it and in the masthead/footer/title/download.
+- Retain dataset metadata and generator bytes for exact download continuity. The frame campaign ID and its records are unrelated to product renaming.
+- Use paper/editorial semantic tokens, V-and-star mark, DM Sans UI, Libre Caslon display and one local categorical mapping. Existing print black/white rules are intentional ink-saving presentation.
+- Keep the existing production domain; a new domain/routing change was blocked by automatic approval review in the parent task and requires separate explicit approval.

@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { computed, ref, nextTick } from "vue";
 import {
-  MeridianBrand,
-  MeridianBadge,
-  MeridianNotice,
-  MeridianEmpty,
-} from "@meridian/ui/vue";
+  VesperBrand,
+  VesperBadge,
+  VesperNotice,
+  VesperEmpty,
+} from "@vesper/ui/vue";
 import { campaignColors, chartStyle } from "./presentation/campaignStyle";
 import { scaleLinear } from "d3-scale";
 import {
@@ -107,7 +107,7 @@ function download() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "meridian-fictional-dataset.json";
+    a.download = "frame-fictional-dataset.json";
     a.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
     downloadError.value = "";
@@ -118,18 +118,18 @@ function download() {
 }
 </script>
 <template>
-  <a class="ms-skip" href="#story">Skip to story</a>
+  <a class="vs-skip" href="#story">Skip to story</a>
   <header class="masthead">
-    <MeridianBrand href="#" aria-label="Meridian Signal Group, top" />
-    <span class="edition">THE MEASUREMENT EDIT / P302</span>
-    <a class="ms-button ms-button--quiet" href="#methodology">Methodology</a>
+    <VesperBrand href="#" aria-label="Vesper Media Group, top" />
+    <span class="edition">FRAME / THE MEASUREMENT EDIT</span>
+    <a class="vs-button vs-button--quiet" href="#methodology">Methodology</a>
   </header>
   <main id="story">
     <section class="hero" aria-labelledby="title">
       <div class="eyebrow">
-        <span class="dot"></span> A FICTIONAL COMMUNICATIONS DATA STORY
+        <span class="dot"></span> FRAME · A FICTIONAL DATA STORY
       </div>
-      <h1 id="title" class="ms-display">
+      <h1 id="title" class="vs-display">
         Beyond the<br /><em>headline count.</em>
       </h1>
       <div class="hero-bottom">
@@ -141,7 +141,7 @@ function download() {
         </p>
         <a
           href="#volume"
-          class="ms-button ms-button--secondary begin-link"
+          class="vs-button vs-button--secondary begin-link"
           aria-label="Begin the story"
           >Begin the story</a
         >
@@ -152,7 +152,7 @@ function download() {
         ><span>ALL DATA INVENTED</span>
       </div>
     </section>
-    <nav class="story-nav ms-tabs" aria-label="Story chapters">
+    <nav class="story-nav vs-tabs" aria-label="Story chapters">
       <a href="#volume">01 <span>The count</span></a
       ><a href="#reveal">02 <span>The repeat</span></a
       ><a href="#message">03 <span>The message</span></a
@@ -201,14 +201,14 @@ function download() {
           :aria-pressed="selected === r.campaign.id"
           @click="selected = selected === r.campaign.id ? '' : r.campaign.id"
           :style="{ '--campaign': campaignColors[r.campaign.id] }"
-          :class="['ms-button', 'ms-button--secondary', 'campaign-button']"
+          :class="['vs-button', 'vs-button--secondary', 'campaign-button']"
         >
           <span>{{ String(i + 1).padStart(2, "0") }}</span>
           {{ r.campaign.name }}
-          <span v-if="selected === r.campaign.id" class="ms-sr-only"
+          <span v-if="selected === r.campaign.id" class="vs-sr-only"
             >Following</span
           ></button
-        ><button class="ms-button ms-button--quiet text-button" @click="reset">
+        ><button class="vs-button vs-button--quiet text-button" @click="reset">
           Reset story
         </button>
       </div>
@@ -263,17 +263,17 @@ function download() {
         <div class="chart-panel">
           <div class="panel-label">CHANGE THE UNIT <span>FIG. 02</span></div>
           <div
-            class="segmented ms-segmented"
+            class="segmented vs-segmented"
             aria-label="Volume comparison unit"
           >
             <button
-              class="ms-button ms-button--quiet"
+              class="vs-button vs-button--quiet"
               :aria-pressed="mode === 'published'"
               @click="mode = 'published'"
             >
               Published items</button
             ><button
-              class="ms-button ms-button--quiet"
+              class="vs-button vs-button--quiet"
               :aria-pressed="mode === 'distinct'"
               @click="mode = 'distinct'"
             >
@@ -377,7 +377,7 @@ function download() {
             <p>“{{ r.campaign.primaryMessage }}”</p>
           </div>
           <button
-            class="ms-button ms-button--quiet text-button"
+            class="vs-button vs-button--quiet text-button"
             @click="showCampaignEvidence(r.campaign.id)"
           >
             Read supporting articles
@@ -396,15 +396,15 @@ function download() {
             <span class="small-label">LOOK AT THE UNDERLYING COVERAGE</span>
             <h3>Evidence, not just a percentage.</h3>
           </div>
-          <MeridianBadge tone="neutral" class="fiction-tag"
-            >Fictional editorial annotations</MeridianBadge
+          <VesperBadge tone="neutral" class="fiction-tag"
+            >Fictional editorial annotations</VesperBadge
           >
         </div>
         <div class="evidence-filters">
-          <label class="ms-field"
-            ><span class="ms-field__label">Campaign</span
+          <label class="vs-field"
+            ><span class="vs-field__label">Campaign</span
             ><select
-              class="ms-input"
+              class="vs-input"
               ref="campaignSelect"
               v-model="evidenceCampaign"
             >
@@ -412,10 +412,10 @@ function download() {
                 {{ c.name }}
               </option>
             </select></label
-          ><label class="ms-field"
-            ><span class="ms-field__label">Find an article</span
+          ><label class="vs-field"
+            ><span class="vs-field__label">Find an article</span
             ><input
-              class="ms-input"
+              class="vs-input"
               v-model="query"
               type="search"
               placeholder="Search headlines, excerpts or outlets"
@@ -436,25 +436,25 @@ function download() {
               >{{ outlet(a.outletId)?.name
               }}<small>{{ dateLabel(a.date) }}</small></span
             ><strong>{{ a.headline }}</strong>
-            <MeridianBadge
+            <VesperBadge
               :tone="a.messageIncluded ? 'info' : 'neutral'"
               class="message-label"
               >{{
                 a.messageIncluded ? "Message included" : "Message absent"
-              }}</MeridianBadge
+              }}</VesperBadge
             >
           </button>
         </div>
-        <MeridianEmpty
+        <VesperEmpty
           v-else
           class="empty-state"
           title="No matching articles"
           description="Try another phrase. The story’s overall comparison has not changed."
         >
-          <button class="ms-button ms-button--secondary" @click="query = ''">
+          <button class="vs-button vs-button--secondary" @click="query = ''">
             Clear search
           </button>
-        </MeridianEmpty>
+        </VesperEmpty>
       </div>
       <div class="chapter-navigation">
         <a href="#reveal"> Back to the repeat</a
@@ -473,12 +473,12 @@ function download() {
         can focus the table and use arrow keys.
       </p>
       <div
-        class="table-wrap ms-table-region"
+        class="table-wrap vs-table-region"
         tabindex="0"
         role="region"
         aria-label="Campaign comparison, scroll horizontally on small screens"
       >
-        <table class="ms-table">
+        <table class="vs-table">
           <caption>
             Campaign comparison ·
             {{
@@ -523,7 +523,7 @@ function download() {
         </p>
         <button
           @click="reset"
-          class="ms-button ms-button--secondary light-button"
+          class="vs-button vs-button--secondary light-button"
         >
           Reset the comparison
         </button>
@@ -540,17 +540,17 @@ function download() {
           wider industry.
         </p>
         <button
-          class="ms-button ms-button--primary download-button"
+          class="vs-button vs-button--primary download-button"
           @click="download"
         >
           Download fictional dataset <span>JSON </span>
         </button>
-        <MeridianNotice
+        <VesperNotice
           v-if="downloadError"
           title="Download unavailable"
           tone="danger"
           announcement="assertive"
-          >{{ downloadError }}</MeridianNotice
+          >{{ downloadError }}</VesperNotice
         >
       </div>
       <div class="methods">
@@ -598,13 +598,13 @@ function download() {
             isolated demonstration does not alter the campaign data.
           </p>
           <button
-            class="ms-button ms-button--secondary"
+            class="vs-button vs-button--secondary"
             :aria-pressed="demo"
             @click="demo = !demo"
           >
             {{ demo ? "Hide" : "Show" }} unavailable-data example
           </button>
-          <MeridianNotice
+          <VesperNotice
             v-if="demo"
             class="unavailable"
             :title="formatRate(unavailableExample.rate)"
@@ -617,7 +617,7 @@ function download() {
               {{ unavailableExample.priority }} eligible. No rate can be
               calculated.
             </p>
-          </MeridianNotice>
+          </VesperNotice>
         </details>
         <details>
           <summary>What these numbers cannot tell us</summary>
@@ -631,11 +631,11 @@ function download() {
     </section>
   </main>
   <footer>
-    <MeridianBrand href="#" /><span>Beyond the Headline Count · P302</span
+    <VesperBrand href="#" /><span>Frame · An interactive editorial story</span
     ><span>A fictional story. A useful question.</span>
   </footer>
   <dialog
-    class="ms-dialog"
+    class="vs-dialog"
     ref="evidence"
     aria-labelledby="evidence-title"
     @close="returnFocus?.focus()"
@@ -645,7 +645,7 @@ function download() {
       ><div class="dialog-top">
         <span class="eyebrow">ARTICLE EVIDENCE / FICTIONAL</span
         ><button
-          class="ms-button ms-button--secondary"
+          class="vs-button vs-button--secondary"
           autofocus
           @click="closeEvidence"
           aria-label="Close article evidence"
@@ -658,7 +658,7 @@ function download() {
         {{ dateLabel(article.date) }}
       </p>
       <h2 id="evidence-title">{{ article.headline }}</h2>
-      <blockquote class="ms-quote">{{ article.excerpt }}</blockquote>
+      <blockquote class="vs-quote">{{ article.excerpt }}</blockquote>
       <dl class="evidence-meta">
         <dt>Campaign primary message</dt>
         <dd>{{ articleCampaign.primaryMessage }}</dd>

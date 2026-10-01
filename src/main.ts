@@ -1,5 +1,5 @@
-import "@meridian/ui/fonts.css";
-import "@meridian/ui/styles.css";
+import "@vesper/ui/fonts.css";
+import "@vesper/ui/styles.css";
 import { createApp } from "vue";
 import App from "./App.vue";
 import "./style.css";
